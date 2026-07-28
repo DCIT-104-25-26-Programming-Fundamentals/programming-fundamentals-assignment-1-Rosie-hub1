@@ -55,3 +55,48 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+# =============================================================================
+# PROGRAMMING FUNDAMENTALS — Assignment 6
+# Topic: Loops and Functions
+# =============================================================================
+#
+# TASK: Multiplication Table Generator
+# =============================================================================
+
+
+def single_table(number):
+    #Print the multiplication table for a single number (1 to 12).
+    print(f"\nMultiplication Table for {number}:")
+    for i in range(1, 13):
+        print(f"{number} x {i} = {number * i}")
+
+
+def tables_up_to_n(n):
+    #Print multiplication tables from 1 up to n (each from 1 to 12).
+    if n <= 0:
+        print("Error: N must be a positive integer.")
+        return
+
+    for num in range(1, n + 1):
+        single_table(num)
+        print("-" * 27)  # separator line
+
+
+# Main block
+if __name__ == "__main__":
+    # --- Part A: Single Table ---
+    num = int(input("Enter a number for a single table: "))
+    if num <= 0:
+        print("Error: Number must be positive.")
+    else:
+        single_table(num)
+
+    # --- Part B: Tables from 1 to N ---
+    n = int(input("\nEnter a number N for tables from 1 to N: "))
+    tables_up_to_n(n)
+
+
+
+
+
+

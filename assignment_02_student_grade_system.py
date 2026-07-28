@@ -45,3 +45,31 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def get_grade(score):
+    # Validate the score is within the range 0-100
+    if score < 0 or score > 100:
+        return None
+    
+    # Determine the grade based on the score
+    if 80 <= score <= 100:
+        return 'A'
+    elif 70 <= score < 80:
+        return 'B'
+    elif 60 <= score < 70:
+        return 'C'
+    elif 50 <= score < 60:
+        return 'D'
+    else:
+        return 'F'
+
+# Main block
+if __name__ == "__main__":
+    try:
+        score = float(input("Enter student score (0-100): "))
+        grade = get_grade(score)
+        if grade is None:
+            print("Error: Score must be between 0 and 100.")
+        else:
+            print(f"Grade: {grade}")
+    except ValueError:
+        print("Please enter a valid number.")
